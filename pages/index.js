@@ -1,6 +1,9 @@
 import Link from "next/link"
 import sanity from "../sanity"
 
+import Footer from "../components/footer"
+import Header from "../components/header"
+
 const Home = ( props ) => {
 
 	const {
@@ -11,31 +14,35 @@ const Home = ( props ) => {
 
 	return (
 
-		<div className="bg-slate-200 w-screen h-full p-2.5 md:p-0">
-			<div className="container mx-auto p-5 max-w-3xl bg-slate-50 shadow-md rounded">
-				<div className="grid gap-2.5">
-				{
+		<div className="bg-slate-200 w-screen h-full">
+			<Header/>
+			<div className="mt-5 p-2.5 md:p-0 ">
+				<div className="container mx-auto p-5 max-w-3xl bg-slate-50 shadow-md rounded">
+					<div className="grid gap-2.5">
+					{
 
-					posts.map( ( value, index ) => {
+						posts.map( ( value, index ) => {
 
-						return(
+							return(
 
-							<div key={ "post-" + index } className="border rounded p-5 border-slate-200 shadow">
-								<Link href={ `/${ value.slug.current }` } passHref>
-									<a>
-										<div className="text-xl text-slate-900 font-bold">{ value.title }</div>
-									</a>
-								</Link>
-								<div className="text-base text-slate-900">{ value.description }</div>
-							</div>
+								<div key={ "post-" + index } className="border rounded p-5 border-slate-200 shadow">
+									<Link href={ `/${ value.slug.current }` } passHref>
+										<a>
+											<div className="text-xl text-slate-900 font-bold">{ value.title }</div>
+										</a>
+									</Link>
+									<div className="text-base text-slate-900">{ value.description }</div>
+								</div>
 
-						)
+							)
 
-					})
+						})
 
-				}
+					}
+					</div>
 				</div>
 			</div>
+			<Footer/>
 		</div>
 
 	)
