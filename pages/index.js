@@ -1,5 +1,6 @@
 import Link from "next/link"
 import sanity from "../sanity"
+import format from "date-fns/format"
 
 import Footer from "../components/footer"
 import Header from "../components/header"
@@ -32,6 +33,7 @@ const Home = ( props ) => {
 										</a>
 									</Link>
 									<div className="text-base text-slate-900">{ value.description }</div>
+									<div className="text-xs mt-2.5 text-slate-600">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</div>
 								</div>
 
 							)
