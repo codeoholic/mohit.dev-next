@@ -13,6 +13,7 @@ const Home = () => {
 export const getServerSideProps = async () => {
 
 	const post = await sanity.fetch(`*[_type == "post"]`)
+	console.log( post )
   	return {
 
   		props: {
