@@ -1,0 +1,10 @@
+Contact
+Mohit Tyagi
+Twitter : @codeoholic
+Email : mohit@hey.com
+
+Techonolgy Stack
+- NextJS
+- Sanity
+- Vercel
+- DigitalOcean Spaces as CDN
