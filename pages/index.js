@@ -22,7 +22,7 @@ const Home = ( props ) => {
 				description={ "Using this platform I will be sharing my experiences on the technology that I explore. I might occasionally or more frequenty post my non-technological opinions too." }
 				image={ "https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/mohit.dev.webp" }
 			/>
-			<div className="bg-slate-200 dark:bg-slate-800 w-screen h-full  py-2.5">
+			<div className="bg-slate-200 dark:bg-slate-800 w-screen h-full">
 				<Header/>
 				<div className="mt-0 md:mt-5 p-2.5 md:p-0">
 					<div className="container mx-auto p-5 max-w-3xl bg-slate-50 dark:bg-slate-800 shadow-md rounded dark:border dark:border-slate-600">
