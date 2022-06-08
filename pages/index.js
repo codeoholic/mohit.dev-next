@@ -74,7 +74,7 @@ const Home = ( props ) => {
 export const getServerSideProps = async () => {
 
 	const posts = await sanity.fetch(`*[_type == "post"]{ _id, title, description, meta_image, publish_time, slug } | order( publish_time desc)`)
-	console.log( posts )
+	// console.log( posts )
   	return {
 
   		props: {
