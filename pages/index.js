@@ -34,27 +34,25 @@ const Home = ( props ) => {
 
 								return(
 
-									<div key={ "post-" + index } className="border rounded border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow overflow-hidden">
-										<div>
-											<div className="w-full h-48 sm:h-48 md:h-60 relative bg-slate-200">
-												<Image
-													src={ typeof value.meta_image !== "undefined" ? value.meta_image : "https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/mohit.dev.webp" }
-													layout={ "fill" }
-													objectFit={ "cover" }
-													alt={ "recommendation-image" }
-													unoptimized
-												/>
-											</div>
-											<div className=" p-5">
-												<Link href={ `/${ value.slug.current }` } passHref>
-													<a>
-														<h1 className="text-xl text-slate-900 dark:text-slate-100 font-bold">{ value.title }</h1>
-													</a>
-												</Link>
-												<div className="text-base text-slate-900 dark:text-slate-400">{ value.description }</div>
-												<div className="text-xs mt-2.5 text-slate-600">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</div>
-											</div>
-										</div>
+									<div className="border rounded border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow overflow-hidden" key={ "post-" + index }>
+										<Link href={ `/${ value.slug.current }` } passHref>
+											<a>
+												<div className="w-full h-48 sm:h-48 md:h-60 relative bg-slate-200">
+													<Image
+														src={ typeof value.meta_image !== "undefined" ? value.meta_image : "https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/mohit.dev.webp" }
+														layout={ "fill" }
+														objectFit={ "cover" }
+														alt={ "recommendation-image" }
+														unoptimized
+													/>
+												</div>
+												<div className=" p-5">
+													<h1 className="text-xl text-slate-900 dark:text-slate-100 font-bold">{ value.title }</h1>
+													<div className="text-base text-slate-900 dark:text-slate-400">{ value.description }</div>
+													<div className="text-xs mt-2.5 text-slate-600">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</div>
+												</div>
+											</a>
+										</Link>
 									</div>
 
 								)
