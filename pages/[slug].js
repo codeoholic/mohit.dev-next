@@ -26,7 +26,7 @@ const Home = ( props ) => {
 				description={ description }
 				image={ meta_image }
 			/>
-			<div className="bg-slate-200 w-screen h-full dark:bg-slate-800 py-2.5">
+			<div className="bg-slate-200 w-screen h-full dark:bg-slate-800">
 				<Header/>
 				<div className="mt-5 p-2.5 md:p-0">
 					<div className="container mx-auto p-5 max-w-3xl bg-slate-50 shadow-md rounded dark:bg-slate-800 dark:border dark:border-slate-600">
