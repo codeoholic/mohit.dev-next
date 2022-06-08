@@ -36,7 +36,7 @@ const Home = ( props ) => {
 
 									<div key={ "post-" + index } className="border rounded border-slate-200 dark:border-slate-700 dark:bg-slate-800 shadow overflow-hidden">
 										<div>
-											<div className="w-full h-36 sm:h-48 md:h-60 relative bg-slate-200">
+											<div className="w-full h-48 sm:h-48 md:h-60 relative bg-slate-200">
 												<Image
 													src={ typeof value.meta_image !== "undefined" ? value.meta_image : "https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/mohit.dev.webp" }
 													layout={ "fill" }
