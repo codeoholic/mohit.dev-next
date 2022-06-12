@@ -48,8 +48,10 @@ const Home = ( props ) => {
 												</div>
 												<div className=" p-5">
 													<h1 className="text-xl text-slate-900 dark:text-slate-100 font-bold">{ value.title }</h1>
-													<div className="text-base text-slate-900 dark:text-slate-400">{ value.description }</div>
-													<div className="text-xs mt-2.5 text-slate-600">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</div>
+													<div className="mt-2.5">
+														<div className="text-lg text-slate-900 dark:text-slate-400">{ value.description }</div>
+														<div className="text-xs mt-2.5 text-slate-600">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</div>
+													</div>
 												</div>
 											</a>
 										</Link>
