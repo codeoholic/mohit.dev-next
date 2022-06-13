@@ -3,6 +3,8 @@ import * as Fathom from "fathom-client"
 import { useEffect } from "react"
 import { useRouter } from "next/router"
 
+import { ChakraProvider } from "@chakra-ui/react"
+
 function MyApp({ Component, pageProps }) {
 	
 	const router = useRouter()
@@ -31,7 +33,13 @@ function MyApp({ Component, pageProps }) {
 		}
 
 	}, [])
-	return <Component {...pageProps} />
+	return (
+
+		<ChakraProvider>
+			<Component {...pageProps} />
+		</ChakraProvider>
+
+	)
 
 }
 
