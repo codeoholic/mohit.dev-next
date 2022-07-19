@@ -23,7 +23,7 @@ const Footer = () => {
 	
 	return(
 
-		<div className="container mx-auto max-w-3xl h-full flex justify-center my-5" onClick={ () => displayToast() }>
+		<div className="container mx-auto max-w-3xl h-full flex justify-center py-5" onClick={ () => displayToast() }>
 			<div className="dark:hidden cursor-pointer">🥷🏻</div>
 			<div className="hidden dark:block cursor-pointer">💎</div>
 		</div>
