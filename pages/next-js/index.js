@@ -12,13 +12,9 @@ const NextJSIndex = ( props ) => {
 
 		body,
 		description,
-		meta_image,
-		publish_time,
 		title,
 
 	} = props.nextJS
-
-    console.log( props.nextJS )
 
     return (
 
@@ -51,7 +47,6 @@ const NextJSIndex = ( props ) => {
 export const getServerSideProps = async () => {
 
 	const nextJS = await sanity.fetch(`*[_type == "next-js" && slug.current == "introduction-to-nextjs"][0]{ _id, title, description, meta_image, publish_time, slug, body }`)
-	console.log( nextJS )
   	return {
 
   		props: {
