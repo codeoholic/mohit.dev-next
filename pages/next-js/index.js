@@ -58,7 +58,7 @@ const NextJSIndex = ( props ) => {
 
 export const getServerSideProps = async () => {
 
-	const nextJS = await sanity.fetch(`*[_type == "next-js" && slug.current == "introduction-to-nextjs"][0]{ _id, title, description, meta_image, publish_time, slug, body, next_link_title, next_link_url }`)
+	const nextJS = await sanity.fetch(`*[_type == "next-js" && slug.current == "introduction-to-nextjs"][0]{ _id, title, description, meta_image, publish_time, slug, body, body_hindi, next_link_title, next_link_url }`)
   	return {
 
   		props: {
