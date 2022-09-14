@@ -7,9 +7,8 @@ const Languages = () => {
     const router = useRouter()
     var url = router.asPath
     var url_array = url.split("/")
-    url = url_array.length === 3 ? url_array[2] : url_array[1]
-
-    console.log( url )
+    url = url_array.length === 3 ? url_array[1] + "/" +url_array[2] : url_array[1]
+    
     return (
 
         <div className="flex justify-center mt-5 gap-2.5">
