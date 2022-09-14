@@ -15,6 +15,8 @@ const NextJSIndex = ( props ) => {
 		body,
 		description,
 		title,
+        next_link_title,
+        next_link_url,
 
 	} = props.nextJS
 
@@ -38,9 +40,9 @@ const NextJSIndex = ( props ) => {
                         </div>
                         <div className="flex justify-between">
                             <div></div>
-                            <Link href="/next-js/chapter-1-nextjs-init" passHref>
+                            <Link href={ next_link_url } passHref>
                                 <a className="text-sm text-slate-900 dark:text-slate-50">
-                                    Chapter 1: NextJS init
+                                    { next_link_title }
                                 </a>
                             </Link>
                         </div>
@@ -56,7 +58,7 @@ const NextJSIndex = ( props ) => {
 
 export const getServerSideProps = async () => {
 
-	const nextJS = await sanity.fetch(`*[_type == "next-js" && slug.current == "introduction-to-nextjs"][0]{ _id, title, description, meta_image, publish_time, slug, body }`)
+	const nextJS = await sanity.fetch(`*[_type == "next-js" && slug.current == "introduction-to-nextjs"][0]{ _id, title, description, meta_image, publish_time, slug, body, next_link_title, next_link_url }`)
   	return {
 
   		props: {
