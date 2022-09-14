@@ -1,12 +1,11 @@
 import Link from "next/link"
 
-import sanity from "../../sanity"
+import sanity from "../../../sanity"
 import { PortableText } from "@portabletext/react"
 
-import Footer from "../../components/footer"
-import Header from "../../components/header"
-import MetaTags from "../../components/meta-tags"
-import Languages from "../../components/languages"
+import Footer from "../../../components/footer"
+import Header from "../../../components/header"
+import MetaTags from "../../../components/meta-tags"
 
 const NextJSChapter = ( props ) => {
 
@@ -66,7 +65,6 @@ const NextJSChapter = ( props ) => {
                             </div>
 						</div>
 					</div>
-                    <Languages />
 				</div>
 				<Footer/>
 			</div>
