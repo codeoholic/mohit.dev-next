@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 import sanity from "../../sanity"
 import { PortableText } from "@portabletext/react"
 
@@ -13,6 +15,10 @@ const NextJSChapter = ( props ) => {
 		description,
 		meta_image,
 		title,
+        next_link_title,
+        next_link_url,
+        previous_link_title,
+        previous_link_url,
 
 	} = props.post
 
@@ -35,6 +41,28 @@ const NextJSChapter = ( props ) => {
 							<div className="text-slate-700 mt-5 text-lg dark:text-slate-200 w-full prose prose-p:mt-0 prose-p:mb-2.5 max-w-none leading-normal prose-code:before:content-none prose-code:after:content-none prose-code:mt-2.5 prose-strong:dark:text-slate-200">
 								<PortableText value={ body } />
 							</div>
+                            <div className="flex justify-between">
+                                {
+
+                                    typeof previous_link_title !== "undefined" &&
+                                    <Link href={ previous_link_url } passHref>
+                                        <a className="text-sm text-slate-900 dark:text-slate-50">
+                                            { previous_link_title }
+                                        </a>
+                                    </Link>
+
+                                }
+                                {
+
+                                    typeof next_link_title !== "undefined" &&
+                                    <Link href={ next_link_url } passHref>
+                                        <a className="text-sm text-slate-900 dark:text-slate-50">
+                                            { next_link_title }
+                                        </a>
+                                    </Link>
+
+                                }
+                            </div>
 						</div>
 					</div>
 				</div>
