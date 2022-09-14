@@ -29,10 +29,6 @@ const MetaTags = ({
 			<meta property="twitter:title" content={`${ title } | mohit.dev`}/>
 			<meta property="twitter:description" content={ description }/>
 			<meta property="twitter:image" content={ image }/>
-			
-			<link rel="preconnect" href="https://fonts.googleapis.com" />
-			<link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
-			<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=optional" rel="stylesheet" /> 
   		</Head>
 
 	)
