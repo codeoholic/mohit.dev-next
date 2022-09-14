@@ -46,6 +46,7 @@ const Home = ( props ) => {
 														objectFit={ "cover" }
 														alt={ "recommendation-image" }
 														unoptimized
+														priority={ index < 6 ? true : false }
 													/>
 												</div>
 												<div className=" p-5">
