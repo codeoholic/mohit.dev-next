@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react"
 import Footer from "../../../components/footer"
 import Header from "../../../components/header"
 import MetaTags from "../../../components/meta-tags"
+import Languages from "../../../components/languages"
 
 const NextJSChapter = ( props ) => {
 
@@ -65,6 +66,7 @@ const NextJSChapter = ( props ) => {
                             </div>
 						</div>
 					</div>
+					<Languages />
 				</div>
 				<Footer/>
 			</div>
