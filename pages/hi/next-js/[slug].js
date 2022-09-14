@@ -16,6 +16,7 @@ const NextJSChapter = ( props ) => {
 		description,
 		meta_image,
 		title,
+		title_hindi,
         next_link_title,
         next_link_url,
         previous_link_title,
@@ -38,7 +39,7 @@ const NextJSChapter = ( props ) => {
 				<div className="mt-5 p-2.5 md:p-0">
 					<div className="container mx-auto p-5 max-w-3xl bg-slate-50 shadow-md rounded dark:bg-slate-800 dark:border dark:border-slate-300">
 						<div className="mt-5">
-							<h1 className="text-3xl text-slate-900 font-bold dark:text-slate-50">{ title }</h1>
+							<h1 className="text-3xl text-slate-900 font-bold dark:text-slate-50">{ title_hindi }</h1>
 							<div className="text-slate-700 mt-5 text-lg dark:text-slate-200 w-full prose prose-p:mt-0 prose-p:mb-2.5 max-w-none leading-normal prose-code:before:content-none prose-code:after:content-none prose-code:mt-2.5 prose-strong:dark:text-slate-200">
 								<PortableText value={ body_hindi } />
 							</div>
