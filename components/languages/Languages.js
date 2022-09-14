@@ -7,7 +7,7 @@ const Languages = () => {
     const router = useRouter()
     var url = router.asPath
     var url_array = url.split("/")
-    url = url_array.length === 3 ? url_array[1] + "/" +url_array[2] : url_array[1]
+    url = url_array.length === 3 ? url_array[1] + "/" +url_array[2] : url_array.length === 4 ? url_array[2] + "/" +url_array[3] : url_array[1]
     
     return (
 
