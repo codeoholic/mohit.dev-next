@@ -76,10 +76,17 @@ const Home = ( props ) => {
 
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ req, res }) => {
 
 	const posts = await sanity.fetch(`*[_type == "post"]{ _id, title, description, meta_image, publish_time, slug } | order( publish_time desc)`)
-	// console.log( posts )
+	
+	res.setHeader(
+
+		"Cache-Control",
+		"public, s-maxage=3600, stale-while-revalidate=3600"
+
+	)
+
   	return {
 
   		props: {
