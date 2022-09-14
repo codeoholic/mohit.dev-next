@@ -41,6 +41,8 @@ const Home = ( props ) => {
 								objectFit={ "cover" }
 								alt={ title }
 								unoptimized
+								priority={ true }
+								sizes="100vw"
 							/>
 						</div>
 						<div className="mt-5">
