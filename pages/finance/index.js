@@ -40,7 +40,7 @@ const Home = ( props ) => {
 								return(
 
 									<div className="border rounded border-slate-200 dark:border-slate-300 dark:bg-slate-800 shadow overflow-hidden" key={ "post-" + index }>
-										<Link href={ `/${ value.slug.current }` } passHref>
+										<Link href={ `/finance/${ value.slug.current }` } passHref>
 											<a>
 												<div className="w-full h-48 sm:h-48 md:h-60 relative bg-slate-200">
 													<Image
