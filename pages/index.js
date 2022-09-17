@@ -12,7 +12,10 @@ const Home = ( props ) => {
 	const {
 
 		nextjs_posts,
+		react_posts,
 		reactnative_posts,
+		rust_posts,
+		ubuntu_posts,
 
 	} = props
 
@@ -39,7 +42,7 @@ const Home = ( props ) => {
 									return(
 
 										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
-											<Link href={ `/${ value.slug.current }` } passHref>
+											<Link href={ `/nextjs/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
 													<div className="mt-1">
@@ -64,7 +67,82 @@ const Home = ( props ) => {
 									return(
 
 										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
-											<Link href={ `/${ value.slug.current }` } passHref>
+											<Link href={ `/react-native/${ value.slug.current }` } passHref>
+												<a>
+													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="mt-1">
+														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
+													</div>
+												</a>
+											</Link>
+										</div>
+
+									)
+
+								})
+
+							}
+						</div>
+						<div className="grid gap-2.5 mt-5">
+							<h1 className="text-2xl text-slate-900 font-bold">React</h1>
+							{
+
+								react_posts.map( ( value, index ) => {
+
+									return(
+
+										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
+											<Link href={ `/react/${ value.slug.current }` } passHref>
+												<a>
+													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="mt-1">
+														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
+													</div>
+												</a>
+											</Link>
+										</div>
+
+									)
+
+								})
+
+							}
+						</div>
+						<div className="grid gap-2.5 mt-5">
+							<h1 className="text-2xl text-slate-900 font-bold">Rust</h1>
+							{
+
+								rust_posts.map( ( value, index ) => {
+
+									return(
+
+										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
+											<Link href={ `/rust/${ value.slug.current }` } passHref>
+												<a>
+													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="mt-1">
+														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
+													</div>
+												</a>
+											</Link>
+										</div>
+
+									)
+
+								})
+
+							}
+						</div>
+						<div className="grid gap-2.5 mt-5">
+							<h1 className="text-2xl text-slate-900 font-bold">Ubuntu</h1>
+							{
+
+								ubuntu_posts.map( ( value, index ) => {
+
+									return(
+
+										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
+											<Link href={ `/ubuntu/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
 													<div className="mt-1">
@@ -94,6 +172,9 @@ export const getServerSideProps = async ({ req, res }) => {
 
 	const nextjs_posts = await sanity.fetch(`*[_type == "post" && "nextjs" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const reactnative_posts = await sanity.fetch(`*[_type == "post" && "react-native" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
+	const react_posts = await sanity.fetch(`*[_type == "post" && "react" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
+	const rust_posts = await sanity.fetch(`*[_type == "post" && "rust" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
+	const ubuntu_posts = await sanity.fetch(`*[_type == "post" && "ubuntu" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	
 	res.setHeader(
 
@@ -107,7 +188,10 @@ export const getServerSideProps = async ({ req, res }) => {
   		props: {
 
 			nextjs_posts,
+			react_posts,
 			reactnative_posts,
+			rust_posts,
+			ubuntu_posts,
 
   		}
 

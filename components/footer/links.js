@@ -5,10 +5,6 @@ export const LINKS_PRIMARY = [
         url: "elixir"
     },
     {
-        name: "Linux",
-        url: "linux"
-    },
-    {
         name: "NextJS",
         url: "nextjs"
     },
