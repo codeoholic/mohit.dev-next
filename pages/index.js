@@ -11,11 +11,10 @@ const Home = ( props ) => {
 
 	const {
 
-		posts
+		nextjs_posts,
+		reactnative_posts,
 
 	} = props
-
-	console.log( posts )
 
 	return (
 
@@ -32,25 +31,54 @@ const Home = ( props ) => {
 				<div className="mt-0 md:mt-5 md:p-0">
 					<div className="container mx-auto max-w-3xl bg-slate-50 dark:bg-slate-800 rounded p-5">
 						<div className="grid gap-2.5">
-						{
+							<h1 className="text-2xl text-slate-900 font-bold">NextJS</h1>
+							{
 
-							posts.map( ( value, index ) => {
+								nextjs_posts.map( ( value, index ) => {
 
-								return(
+									return(
 
-									<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
-										<Link href={ `/${ value.slug.current }` } passHref>
-											<a>
-												<p className="text-xl text-slate-900 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-											</a>
-										</Link>
-									</div>
+										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
+											<Link href={ `/${ value.slug.current }` } passHref>
+												<a>
+													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="mt-1">
+														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
+													</div>
+												</a>
+											</Link>
+										</div>
 
-								)
+									)
 
-							})
+								})
 
-						}
+							}
+						</div>
+						<div className="grid gap-2.5 mt-5">
+							<h1 className="text-2xl text-slate-900 font-bold">React Native</h1>
+							{
+
+								reactnative_posts.map( ( value, index ) => {
+
+									return(
+
+										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
+											<Link href={ `/${ value.slug.current }` } passHref>
+												<a>
+													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="mt-1">
+														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
+													</div>
+												</a>
+											</Link>
+										</div>
+
+									)
+
+								})
+
+							}
 						</div>
 					</div>
 				</div>
@@ -64,7 +92,8 @@ const Home = ( props ) => {
 
 export const getServerSideProps = async ({ req, res }) => {
 
-	const posts = await sanity.fetch(`*[_type == "post"]{ title, slug, categories } | order( publish_time desc )`)
+	const nextjs_posts = await sanity.fetch(`*[_type == "post" && "nextjs" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
+	const reactnative_posts = await sanity.fetch(`*[_type == "post" && "react-native" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	
 	res.setHeader(
 
@@ -77,7 +106,8 @@ export const getServerSideProps = async ({ req, res }) => {
 
   		props: {
 
-  			posts
+			nextjs_posts,
+			reactnative_posts,
 
   		}
 
