@@ -17,6 +17,8 @@ const Home = ( props ) => {
 
 	} = props
 
+	// console.log( posts )
+
 	return (
 
 		<>
@@ -71,8 +73,7 @@ const Home = ( props ) => {
 export const getServerSideProps = async ( context ) => {
 
 	const category = context.params.category
-	console.log( category )
-	const posts = await sanity.fetch(`*[_type == "post"]{ _id, title, description, meta_image, publish_time, slug } | order( publish_time desc)`)
+	const posts = await sanity.fetch(`*[_type == 'post' && '${category}' in categories[]->slug.current]{ title, slug, publish_time }`)
 
 	if( posts !== null )
 		return {

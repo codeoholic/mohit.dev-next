@@ -15,7 +15,7 @@ const Home = ( props ) => {
 
 	} = props
 
-	// console.log( posts )
+	console.log( posts )
 
 	return (
 
@@ -64,7 +64,7 @@ const Home = ( props ) => {
 
 export const getServerSideProps = async ({ req, res }) => {
 
-	const posts = await sanity.fetch(`*[_type == "post"]{ title, slug } | order( publish_time desc)`)
+	const posts = await sanity.fetch(`*[_type == "post"]{ title, slug, categories } | order( publish_time desc)`)
 	
 	res.setHeader(
 
