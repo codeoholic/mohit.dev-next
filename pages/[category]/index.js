@@ -44,9 +44,8 @@ const Home = ( props ) => {
 											<a>
 												<div className="">
 													<h2 className="text-xl text-slate-900 dark:text-slate-100 font-bold">{ value.title }</h2>
-													<div className="mt-2.5">
-														<p className="text-lg text-slate-900 dark:text-slate-100">{ value.description }</p>
-														<p className="text-xs mt-2.5 text-slate-600 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
+													<div className="mt-1">
+														<p className="text-xs text-slate-600 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</div>
 											</a>
@@ -69,26 +68,27 @@ const Home = ( props ) => {
 
 }
 
-export const getServerSideProps = async ({ req, res }) => {
+export const getServerSideProps = async ( context ) => {
 
-	const posts = await sanity.fetch(`*[_type == "finance"]{ _id, title, description, meta_image, publish_time, slug } | order( publish_time desc)`)
+	const category = context.params.category
+	console.log( category )
+	const posts = await sanity.fetch(`*[_type == "post"]{ _id, title, description, meta_image, publish_time, slug } | order( publish_time desc)`)
+
+	if( posts !== null )
+		return {
+
+			props: {
+
+				posts
+
+			}
+
+		}
+	return {
 	
-	res.setHeader(
-
-		"Cache-Control",
-		"public, s-maxage=3600, stale-while-revalidate=3600"
-
-	)
-
-  	return {
-
-  		props: {
-
-  			posts
-
-  		}
-
-  	}
+		notFound: true
+	
+	}
 
 }
 
