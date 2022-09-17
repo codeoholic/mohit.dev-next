@@ -22,9 +22,13 @@ const Footer = () => {
 		LINKS_SECONDARY.map( ( value, index ) => {
 
 			links_secondary.push(
+
 				<div key={"footer-link-" + index }>
-					<p className="text-sm text-slate-300">{ value.name }</p>
+					<Link href={ "/" + value.url } passHref>
+						<a className="text-sm text-slate-300">{ value.name }</a>
+					</Link>
 				</div>
+
 			)
 
 		})
