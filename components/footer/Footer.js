@@ -1,7 +1,6 @@
 import React from "react"
 import Link from "next/link"
 
-
 const { LINKS_PRIMARY, LINKS_SECONDARY } = require("./links")
 
 const Footer = () => {
@@ -13,9 +12,13 @@ const Footer = () => {
 		LINKS_PRIMARY.map( ( value, index ) => {
 
 			links_primary.push(
-				<div key={"footer-link-" + index }>
-					<p className="text-sm text-slate-300">{ value.name }</p>
+
+				<div key={"footer-link-primary-" + index }>
+					<Link href={ "/" + value.url } passHref>
+						<a className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</a>
+					</Link>
 				</div>
+
 			)
 
 		})
@@ -25,7 +28,7 @@ const Footer = () => {
 
 				<div key={"footer-link-" + index }>
 					<Link href={ "/" + value.url } passHref>
-						<a className="text-sm text-slate-300">{ value.name }</a>
+						<a className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</a>
 					</Link>
 				</div>
 
@@ -46,6 +49,7 @@ const Footer = () => {
 		)
 
 	}
+
 	return(
 
 		<div className="container mx-auto max-w-3xl h-full flex justify-center py-5 items-center">
