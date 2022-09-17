@@ -13,11 +13,10 @@ const Home = ( props ) => {
 
 	const {
 
-		posts
+		category,
+		posts,
 
 	} = props
-
-	// console.log( posts )
 
 	return (
 
@@ -42,7 +41,7 @@ const Home = ( props ) => {
 								return(
 
 									<div className="dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
-										<Link href={ `/finance/${ value.slug.current }` } passHref>
+										<Link href={ `/${ category }/${ value.slug.current }` } passHref>
 											<a>
 												<div className="">
 													<h2 className="text-xl text-slate-900 dark:text-slate-100 font-bold">{ value.title }</h2>
@@ -73,14 +72,15 @@ const Home = ( props ) => {
 export const getServerSideProps = async ( context ) => {
 
 	const category = context.params.category
-	const posts = await sanity.fetch(`*[_type == 'post' && '${category}' in categories[]->slug.current]{ title, slug, publish_time }`)
+	const posts = await sanity.fetch(` *[ _type == "post" && "${category}" in categories[]->slug.current ]{ title, slug, publish_time } `)
 
 	if( posts !== null )
 		return {
 
 			props: {
 
-				posts
+				category,
+				posts,
 
 			}
 
