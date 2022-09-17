@@ -75,7 +75,7 @@ const Home = ( props ) => {
 export const getServerSideProps = async ( context ) => {
 
 	const category_url = context.params.category
-	const posts = await sanity.fetch(` *[ _type == "post" && "${ category_url }" in categories[]->slug.current ]{ title, slug, publish_time, categories[]->{ title } } `)
+	const posts = await sanity.fetch(` *[ _type == "post" && "${ category_url }" in categories[]->slug.current ]{ title, slug, publish_time, categories[]->{ title } } | order( publish_time desc ) `)
 	var category_name = ""
 	LINKS_PRIMARY.map( ( value ) => {
 
