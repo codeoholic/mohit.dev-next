@@ -9,11 +9,14 @@ import MetaTags from "../../components/meta-tags"
 
 import sanity from "../../sanity"
 
+const { LINKS_PRIMARY, LINKS_SECONDARY } = require("../../components/footer/links")
+
 const Home = ( props ) => {
 
 	const {
 
-		category,
+		category_name,
+		category_url,
 		posts,
 
 	} = props
@@ -32,7 +35,7 @@ const Home = ( props ) => {
 				/>
 				<div className="mt-0 md:mt-5 p-2.5 md:p-0">
 					<div className="container mx-auto p-5 max-w-3xl bg-slate-50 dark:bg-slate-800 shadow-md rounded dark:border dark:border-slate-300">
-                        <h1 className="text-2xl text-slate-900 font-bold">Articles on Finance</h1>
+                        <h1 className="text-2xl text-slate-900 font-bold">Articles on { category_name }</h1>
 						<div className="grid gap-5 mt-5">
 						{
 
@@ -41,7 +44,7 @@ const Home = ( props ) => {
 								return(
 
 									<div className="dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
-										<Link href={ `/${ category }/${ value.slug.current }` } passHref>
+										<Link href={ `/${ category_url }/${ value.slug.current }` } passHref>
 											<a>
 												<div className="">
 													<h2 className="text-xl text-slate-900 dark:text-slate-100 font-bold">{ value.title }</h2>
@@ -71,15 +74,32 @@ const Home = ( props ) => {
 
 export const getServerSideProps = async ( context ) => {
 
-	const category = context.params.category
-	const posts = await sanity.fetch(` *[ _type == "post" && "${category}" in categories[]->slug.current ]{ title, slug, publish_time } `)
+	const category_url = context.params.category
+	const posts = await sanity.fetch(` *[ _type == "post" && "${ category_url }" in categories[]->slug.current ]{ title, slug, publish_time, categories[]->{ title } } `)
+	var category_name = ""
+	LINKS_PRIMARY.map( ( value ) => {
+
+		if( value.url === category_url )
+			category_name = value.name
+
+	})
+	if( category_name === "" ){
+
+		LINKS_SECONDARY.map( ( value ) => {
+
+			if( value.url === category_url )
+				category_name = value.name
+	
+		})
+	}
 
 	if( posts !== null )
 		return {
 
 			props: {
 
-				category,
+				category_name,
+				category_url,
 				posts,
 
 			}
