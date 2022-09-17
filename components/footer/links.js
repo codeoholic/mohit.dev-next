@@ -1,6 +1,10 @@
 export const LINKS_PRIMARY = [
 
     {
+        name: "Elixir",
+        url: "elixir"
+    },
+    {
         name: "Linux",
         url: "linux"
     },
