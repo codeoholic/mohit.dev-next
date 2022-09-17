@@ -8,9 +8,19 @@ import Header from "../../components/header"
 import MetaTags from "../../components/meta-tags"
 
 import sanity from "../../sanity"
+import Link from "next/link"
+
+const { LINKS_PRIMARY, LINKS_SECONDARY } = require("../../components/footer/links")
 
 const Home = ( props ) => {
 
+	const {
+
+		category_name,
+		category_url,
+		post,
+
+	} = props
 	const {
 
 		body,
@@ -19,7 +29,7 @@ const Home = ( props ) => {
 		publish_time,
 		title,
 
-	} = props.post
+	} = post
 
 	return (
 
@@ -53,6 +63,13 @@ const Home = ( props ) => {
 								<PortableText value={ body } />
 							</div>
 						</div>
+						<div className="mt-5">
+							<Link href={ "/" + category_url } passHref>
+								<a>
+									<p className="underline">More articles on { category_name }</p>
+								</a>
+							</Link>
+						</div>
 					</div>
 				</div>
 				<Footer/>
@@ -65,16 +82,35 @@ const Home = ( props ) => {
 
 export const getServerSideProps = async ( context ) => {
 
-	const category = context.params.category
+	const category_url = context.params.category
 	const slug = context.params.slug
-	const post = await sanity.fetch(`*[_type == "post" && "${category}" in categories[]->slug.current && slug.current == "${slug}"][0]`)
+	const post = await sanity.fetch(`*[_type == "post" && "${ category_url }" in categories[]->slug.current && slug.current == "${slug}"][0]`)
 	
+	var category_name = ""
+	LINKS_PRIMARY.map( ( value ) => {
+
+		if( value.url === category_url )
+			category_name = value.name
+
+	})
+	if( category_name === "" ){
+
+		LINKS_SECONDARY.map( ( value ) => {
+
+			if( value.url === category_url )
+				category_name = value.name
+	
+		})
+	}
+
 	if( post !== null )
 		return {
 
 			props: {
 
-				post
+				category_name,
+				category_url,
+				post,
 
 			}
 
