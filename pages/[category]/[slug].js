@@ -66,7 +66,7 @@ const Home = ( props ) => {
 export const getServerSideProps = async ( context ) => {
 
 	const slug = context.params.slug
-	const post = await sanity.fetch(`*[_type == "finance" && slug.current == "${slug}"][0]`)
+	const post = await sanity.fetch(`*[_type == "post" && slug.current == "${slug}"][0]`)
 	
 	if( post !== null )
 		return {
