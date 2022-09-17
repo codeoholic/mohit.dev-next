@@ -1,31 +1,61 @@
 import React from "react"
 import Link from "next/link"
 
-import { useToast } from "@chakra-ui/react"
+const { LINKS_PRIMARY, LINKS_SECONDARY } = require("./links")
 
 const Footer = () => {
+	
+	const renderLinks = () => {
 
-	const toast = useToast()
+		var links_primary = []
+		var links_secondary = []
+		LINKS_PRIMARY.map( ( value, index ) => {
 
-	const displayToast = () => {
+			links_primary.push(
 
-		toast({
+				<div key={"footer-link-primary-" + index }>
+					<Link href={ "/" + value.url } passHref>
+						<a className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</a>
+					</Link>
+				</div>
 
-			duration: 5000,
-			isClosable: false,
-			position: "top",
-			status: "success",
-			title: "Hey Ninja!",
+			)
 
-        })
+		})
+		LINKS_SECONDARY.map( ( value, index ) => {
+
+			links_secondary.push(
+
+				<div key={"footer-link-" + index }>
+					<Link href={ "/" + value.url } passHref>
+						<a className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</a>
+					</Link>
+				</div>
+
+			)
+
+		})
+		return (
+
+			<div className="flex flex-col items-center gap-2.5">
+				<div className="flex gap-2.5">
+					{ links_primary }
+				</div>
+				<div className="flex gap-2.5">
+					{ links_secondary }
+				</div>
+			</div>
+
+		)
 
 	}
-	
+
 	return(
 
-		<div className="container mx-auto max-w-3xl h-full flex justify-center py-5" onClick={ () => displayToast() }>
-			<div className="dark:hidden cursor-pointer">🥷🏻</div>
-			<div className="hidden dark:block cursor-pointer">💎</div>
+		<div className="container mx-auto max-w-3xl h-full flex justify-center py-5 items-center">
+			<div>
+				{ renderLinks() }
+			</div>
 		</div>
 
 	)

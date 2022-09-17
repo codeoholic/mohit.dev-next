@@ -1,12 +1,13 @@
 import Image from "next/image"
 
-import sanity from "../sanity"
 import { PortableText } from "@portabletext/react"
 import format from "date-fns/format"
 
-import Footer from "../components/footer"
-import Header from "../components/header"
-import MetaTags from "../components/meta-tags"
+import Footer from "../../components/footer"
+import Header from "../../components/header"
+import MetaTags from "../../components/meta-tags"
+
+import sanity from "../../sanity"
 
 const Home = ( props ) => {
 
@@ -64,8 +65,9 @@ const Home = ( props ) => {
 
 export const getServerSideProps = async ( context ) => {
 
+	const category = context.params.category
 	const slug = context.params.slug
-	const post = await sanity.fetch(`*[_type == "post" && slug.current == "${slug}"][0]`)
+	const post = await sanity.fetch(`*[_type == "post" && "${category}" in categories[]->slug.current && slug.current == "${slug}"][0]`)
 	
 	if( post !== null )
 		return {
