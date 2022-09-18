@@ -25,7 +25,7 @@ const Home = ( props ) => {
 
 		<>
 			<MetaTags
-				title="Tecnocrat"
+				title={ "Articles on " + category_name }
 				description={ "Using this platform I will be sharing my experiences on the technology that I explore. I might occasionally or more frequenty post my non-technological opinions too." }
 				image={ "https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/mohit.dev.webp" }
 			/>
