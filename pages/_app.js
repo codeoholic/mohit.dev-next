@@ -5,6 +5,8 @@ import { useRouter } from "next/router"
 
 import { ChakraProvider } from "@chakra-ui/react"
 
+import 'highlight.js/styles/default.css';
+
 function MyApp({ Component, pageProps }) {
 	
 	const router = useRouter()
