@@ -12,6 +12,8 @@ import Link from "next/link"
 
 const { LINKS_PRIMARY, LINKS_SECONDARY } = require("../../components/footer/links")
 
+import imageUrlBuilder from "@sanity/image-url"
+
 const Home = ( props ) => {
 
 	const {
@@ -25,11 +27,31 @@ const Home = ( props ) => {
 
 		body,
 		description,
+		image,
 		meta_image,
 		publish_time,
 		title,
 
 	} = post
+
+	console.log( post )
+
+	const builder = imageUrlBuilder({
+
+		baseUrl: "https://cdn.sanity.io",
+		projectId: "aq4afrbq",
+		dataset: "production",
+
+	})
+
+	const urlFor = (source) => builder.image(source)
+	if( typeof image !== "undefined" )
+		var image_seo = urlFor( image.asset._ref )
+			.auto('format')
+			.fit('max')
+			.toString()
+	else
+		image_seo = meta_image
 
 	const codeComponent = {
 
@@ -49,7 +71,7 @@ const Home = ( props ) => {
 			<MetaTags
 				title={ title }
 				description={ description }
-				image={ meta_image }
+				image={ image_seo }
 			/>
 			<div className="bg-slate-200 w-screen h-full dark:bg-slate-800">
 				<Header
