@@ -21,6 +21,10 @@ export const LINKS_PRIMARY = [
         url: "rust"
     },
     {
+        name: "Tailwind CSS",
+        url: "tailwind-css"
+    },
+    {
         name: "Ubuntu",
         url: "ubuntu"
     }

@@ -15,6 +15,7 @@ const Home = ( props ) => {
 		react_posts,
 		reactnative_posts,
 		rust_posts,
+		tailwindcss_posts,
 		ubuntu_posts,
 
 	} = props
@@ -134,6 +135,31 @@ const Home = ( props ) => {
 							}
 						</div>
 						<div className="grid gap-2.5 mt-5">
+							<h1 className="text-2xl text-slate-900 font-bold">Tailwind CSS</h1>
+							{
+
+							tailwindcss_posts.map( ( value, index ) => {
+
+									return(
+
+										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
+											<Link href={ `/tailwind-css/${ value.slug.current }` } passHref>
+												<a>
+													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="mt-1">
+														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
+													</div>
+												</a>
+											</Link>
+										</div>
+
+									)
+
+								})
+
+							}
+						</div>
+						<div className="grid gap-2.5 mt-5">
 							<h1 className="text-2xl text-slate-900 font-bold">Ubuntu</h1>
 							{
 
@@ -174,6 +200,7 @@ export const getServerSideProps = async ({ req, res }) => {
 	const reactnative_posts = await sanity.fetch(`*[_type == "post" && "react-native" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const react_posts = await sanity.fetch(`*[_type == "post" && "react" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const rust_posts = await sanity.fetch(`*[_type == "post" && "rust" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
+	const tailwindcss_posts = await sanity.fetch(`*[_type == "post" && "tailwind-css" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const ubuntu_posts = await sanity.fetch(`*[_type == "post" && "ubuntu" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	
 	res.setHeader(
@@ -191,6 +218,7 @@ export const getServerSideProps = async ({ req, res }) => {
 			react_posts,
 			reactnative_posts,
 			rust_posts,
+			tailwindcss_posts,
 			ubuntu_posts,
 
   		}
