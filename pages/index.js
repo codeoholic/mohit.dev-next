@@ -202,6 +202,8 @@ export const getServerSideProps = async ({ req, res }) => {
 	const rust_posts = await sanity.fetch(`*[_type == "post" && "rust" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const tailwindcss_posts = await sanity.fetch(`*[_type == "post" && "tailwind-css" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const ubuntu_posts = await sanity.fetch(`*[_type == "post" && "ubuntu" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
+
+	console.log( tailwindcss_posts )
 	
 	res.setHeader(
 
