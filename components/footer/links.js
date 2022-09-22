@@ -29,6 +29,10 @@ export const LINKS_PRIMARY = [
         url: "tailwind-css"
     },
     {
+        name: "Vercel",
+        url: "vercel"
+    },
+    {
         name: "Ubuntu",
         url: "ubuntu"
     }
