@@ -21,8 +21,16 @@ export const LINKS_PRIMARY = [
         url: "rust"
     },
     {
+        name: "Sanity",
+        url: "sanity"
+    },
+    {
         name: "Tailwind CSS",
         url: "tailwind-css"
+    },
+    {
+        name: "Vercel",
+        url: "vercel"
     },
     {
         name: "Ubuntu",
