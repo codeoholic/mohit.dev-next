@@ -46,7 +46,7 @@ const Home = ( props ) => {
 											<Link href={ `/nextjs/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-0.5">
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -71,7 +71,7 @@ const Home = ( props ) => {
 											<Link href={ `/react-native/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -96,7 +96,7 @@ const Home = ( props ) => {
 											<Link href={ `/react/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -121,7 +121,7 @@ const Home = ( props ) => {
 											<Link href={ `/rust/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -146,7 +146,7 @@ const Home = ( props ) => {
 											<Link href={ `/tailwind-css/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -171,7 +171,7 @@ const Home = ( props ) => {
 											<Link href={ `/ubuntu/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
