@@ -21,6 +21,7 @@ const Home = ( props ) => {
 		category_name,
 		category_url,
 		post,
+		slug,
 
 	} = props
 	const {
@@ -72,6 +73,7 @@ const Home = ( props ) => {
 				title={ title }
 				description={ description }
 				image={ image_seo }
+				slug={ slug }
 			/>
 			<div className="bg-slate-200 w-screen h-full dark:bg-slate-800">
 				<Header
@@ -145,6 +147,7 @@ export const getServerSideProps = async ( context ) => {
 				category_name,
 				category_url,
 				post,
+				slug,
 
 			}
 
