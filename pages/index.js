@@ -45,8 +45,8 @@ const Home = ( props ) => {
 										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
 											<Link href={ `/nextjs/${ value.slug.current }` } passHref>
 												<a>
-													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -70,8 +70,8 @@ const Home = ( props ) => {
 										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
 											<Link href={ `/react-native/${ value.slug.current }` } passHref>
 												<a>
-													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -95,8 +95,8 @@ const Home = ( props ) => {
 										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
 											<Link href={ `/react/${ value.slug.current }` } passHref>
 												<a>
-													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -120,8 +120,8 @@ const Home = ( props ) => {
 										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
 											<Link href={ `/rust/${ value.slug.current }` } passHref>
 												<a>
-													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -146,7 +146,7 @@ const Home = ( props ) => {
 											<Link href={ `/tailwind-css/${ value.slug.current }` } passHref>
 												<a>
 													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -170,8 +170,8 @@ const Home = ( props ) => {
 										<div className="rounded dark:bg-slate-800 overflow-hidden" key={ "post-" + index }>
 											<Link href={ `/ubuntu/${ value.slug.current }` } passHref>
 												<a>
-													<p className="text-xl text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
-													<div className="mt-1">
+													<p className="text-lg text-slate-600 dark:text-slate-100 font-bold hover:text-purple-700">{ value.title }</p>
+													<div className="">
 														<p className="text-xs text-slate-400 dark:text-slate-300">{ format(new Date( value.publish_time ),"MMMM do, yyyy") }</p>
 													</div>
 												</a>
@@ -202,8 +202,6 @@ export const getServerSideProps = async ({ req, res }) => {
 	const rust_posts = await sanity.fetch(`*[_type == "post" && "rust" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const tailwindcss_posts = await sanity.fetch(`*[_type == "post" && "tailwind-css" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
 	const ubuntu_posts = await sanity.fetch(`*[_type == "post" && "ubuntu" in categories[]->slug.current]{ title, slug, publish_time } | order( publish_time desc )`)
-
-	console.log( tailwindcss_posts )
 	
 	res.setHeader(
 
