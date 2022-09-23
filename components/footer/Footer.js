@@ -38,10 +38,10 @@ const Footer = () => {
 		return (
 
 			<div className="flex flex-col items-center gap-2.5">
-				<div className="flex gap-2.5">
+				<div className="flex gap-2.5 flex-wrap justify-center">
 					{ links_primary }
 				</div>
-				<div className="flex gap-2.5">
+				<div className="flex gap-2.5 mt-2.5">
 					{ links_secondary }
 				</div>
 			</div>
