@@ -16,6 +16,7 @@ const MetaTags = ({
     		<meta name="description" content={ title } />
     		<meta name="viewport" content="initial-scale=1.0, width=device-width" />
     		<meta charSet="utf-8" />
+			<meta name="author" content="Mohit Tyagi" />
 			<meta name="title" content={`${ title }`}/>
 			<meta name="description" content={ description }/>
 
