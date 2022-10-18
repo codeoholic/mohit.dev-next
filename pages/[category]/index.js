@@ -35,7 +35,7 @@ const Home = ( props ) => {
 				/>
 				<div className="mt-0 md:mt-5 p-2.5 md:p-0">
 					<div className="container mx-auto p-5 max-w-3xl bg-slate-50 dark:bg-slate-800 shadow-md rounded dark:border dark:border-slate-300">
-                        <h1 className="text-2xl text-slate-900 font-bold">Articles on { category_name }</h1>
+                        <h1 className="text-2xl text-slate-900 font-bold dark:text-slate-100">Articles on { category_name }</h1>
 						<div className="grid gap-5 mt-5">
 						{
 
