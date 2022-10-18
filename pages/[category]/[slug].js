@@ -102,7 +102,7 @@ const Home = ( props ) => {
 						<div className="mt-5">
 							<Link href={ "/" + category_url } passHref>
 								<a>
-									<p className="underline">More articles on { category_name }</p>
+									<p className="underline dark:text-slate-100 text-slate-900">More articles on { category_name }</p>
 								</a>
 							</Link>
 						</div>

@@ -35,7 +35,7 @@ const Home = ( props ) => {
 				<div className="mt-0 md:mt-5 md:p-0">
 					<div className="container mx-auto max-w-3xl bg-slate-50 dark:bg-slate-800 rounded p-5">
 						<div className="grid gap-2.5">
-							<h1 className="text-2xl text-slate-900 font-bold">NextJS</h1>
+							<h1 className="text-2xl text-slate-900 dark:text-slate-100 font-bold">NextJS</h1>
 							{
 
 								nextjs_posts.map( ( value, index ) => {
@@ -60,7 +60,7 @@ const Home = ( props ) => {
 							}
 						</div>
 						<div className="grid gap-2.5 mt-5">
-							<h1 className="text-2xl text-slate-900 font-bold">React Native</h1>
+							<h1 className="text-2xl text-slate-900 dark:text-slate-100 font-bold">React Native</h1>
 							{
 
 								reactnative_posts.map( ( value, index ) => {
@@ -85,7 +85,7 @@ const Home = ( props ) => {
 							}
 						</div>
 						<div className="grid gap-2.5 mt-5">
-							<h1 className="text-2xl text-slate-900 font-bold">React</h1>
+							<h1 className="text-2xl text-slate-900 dark:text-slate-100 font-bold">React</h1>
 							{
 
 								react_posts.map( ( value, index ) => {
@@ -110,7 +110,7 @@ const Home = ( props ) => {
 							}
 						</div>
 						<div className="grid gap-2.5 mt-5">
-							<h1 className="text-2xl text-slate-900 font-bold">Rust</h1>
+							<h1 className="text-2xl text-slate-900 dark:text-slate-100 font-bold">Rust</h1>
 							{
 
 								rust_posts.map( ( value, index ) => {
@@ -135,7 +135,7 @@ const Home = ( props ) => {
 							}
 						</div>
 						<div className="grid gap-2.5 mt-5">
-							<h1 className="text-2xl text-slate-900 font-bold">Tailwind CSS</h1>
+							<h1 className="text-2xl text-slate-900 dark:text-slate-100 font-bold">Tailwind CSS</h1>
 							{
 
 							tailwindcss_posts.map( ( value, index ) => {
@@ -160,7 +160,7 @@ const Home = ( props ) => {
 							}
 						</div>
 						<div className="grid gap-2.5 mt-5">
-							<h1 className="text-2xl text-slate-900 font-bold">Ubuntu</h1>
+							<h1 className="text-2xl text-slate-900 dark:text-slate-100 font-bold">Ubuntu</h1>
 							{
 
 								ubuntu_posts.map( ( value, index ) => {
