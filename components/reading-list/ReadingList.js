@@ -1,5 +1,4 @@
 const { BOOKS } = require("./books")
-console.log( BOOKS )
 
 const ReadingList = () => {
 
@@ -16,14 +15,14 @@ const ReadingList = () => {
                         
                         <li key={ "book-" + index }>
                             <div className="flex grid grid-cols-4 gap-5 items-center">
-                                <div>{ book.name }</div>
-                                <div>{ book.author }</div>
+                                <div className="text-zinc-800">{ book.name }</div>
+                                <div className="text-zinc-800">{ book.author }</div>
                                 <div className="relative">
                                     <div className="bg-blue-600/40 w-full h-3 rounded-full"></div>
                                     <div className={`bg-blue-600 w-[${ book.completion_percentage }%] h-3 rounded-full absolute top-0 left-0`}></div>
                                 </div>
                                 <div className="flex items-center justify-between">
-                                    <div className="text-sm">{ book.completion_percentage !== 100 ? book.completion_percentage +"% complete" : "completed" }</div>
+                                    <div className="text-sm text-zinc-800">{ book.completion_percentage !== 100 ? book.completion_percentage +"% complete" : "Completed" }</div>
                                 </div>
                             </div>
                         </li>
