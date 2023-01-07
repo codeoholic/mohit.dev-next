@@ -1,6 +1,6 @@
-const { BOOKS } = require("./books")
+const ReadingList = ( props ) => {
 
-const ReadingList = () => {
+    const { books } = props
 
     return (
 
@@ -9,7 +9,7 @@ const ReadingList = () => {
             <ol className="list-decimal pl-5 mt-2.5">
             {
 
-                BOOKS.map( ( book, index ) => {
+                books.map( ( book, index ) => {
                     
                     return (
                         

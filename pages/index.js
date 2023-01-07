@@ -2,9 +2,11 @@ import Footer from "../components/footer"
 import Header from "../components/header"
 import MetaTags from "../components/meta-tags"
 import ReadingList from "../components/reading-list"
+import { BOOKS } from "../components/reading-list/books"
 
 const Home = ( props ) => {
 
+	const { books } = props
 	return (
 
 		<>
@@ -22,13 +24,29 @@ const Home = ( props ) => {
 						<h1 className="font-semibold text-zinc-800 text-xl">About</h1>
 						<p className="text-zinc-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 					</div>
-					<ReadingList/>
+					<ReadingList
+						books={ books }
+					/>
 				</div>
 				<Footer/>
 			</div>
 		</>
 
 	)
+
+}
+export async function getServerSideProps( context ) {
+
+
+	return {
+	  	
+		props: {
+
+			books: BOOKS,
+
+		},
+	
+	}
 
 }
 
