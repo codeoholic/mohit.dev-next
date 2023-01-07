@@ -1,6 +1,6 @@
 const { BOOKS } = require("./books")
 
-const ReadingList = () => {
+const ReadingList = ( props ) => {
 
     return (
 
@@ -19,7 +19,7 @@ const ReadingList = () => {
                                 <div className="text-zinc-800">{ book.author }</div>
                                 <div className="relative">
                                     <div className="bg-blue-600/40 w-full h-3 rounded-full"></div>
-                                    <div className={`bg-blue-600 w-[${ book.completion_percentage }%] h-3 rounded-full absolute top-0 left-0`}></div>
+                                    <div className={`${ book.progress } bg-blue-600  h-3 rounded-full absolute top-0 left-0`}></div>
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <div className="text-sm text-zinc-800">{ book.completion_percentage !== 100 ? book.completion_percentage +"% complete" : "Completed" }</div>
