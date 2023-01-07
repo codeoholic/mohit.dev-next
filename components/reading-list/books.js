@@ -7,6 +7,13 @@ export const BOOKS = [{
 
 },{
 
+    name: "Meditations",
+    author: "Marcus Aurelius",
+    completion_percentage: 35,
+    progress: "w-[35%]"
+
+},{
+
     name: "Sapiens",
     author: "Yuval Noah Harari",
     completion_percentage: 0,
