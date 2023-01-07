@@ -7,43 +7,43 @@ const Footer = () => {
 	
 	const renderLinks = () => {
 
-		var links_primary = []
-		var links_secondary = []
-		LINKS_PRIMARY.map( ( value, index ) => {
+		// var links_primary = []
+		// var links_secondary = []
+		// LINKS_PRIMARY.map( ( value, index ) => {
 
-			links_primary.push(
+		// 	links_primary.push(
 
-				<div key={"footer-link-primary-" + index }>
-					<Link href={ "/" + value.url } passHref>
-						<a className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</a>
-					</Link>
-				</div>
+		// 		<div key={"footer-link-primary-" + index }>
+		// 			<Link href={ "/" + value.url } passHref>
+		// 				<div className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</div>
+		// 			</Link>
+		// 		</div>
 
-			)
+		// 	)
 
-		})
-		LINKS_SECONDARY.map( ( value, index ) => {
+		// })
+		// LINKS_SECONDARY.map( ( value, index ) => {
 
-			links_secondary.push(
+		// 	links_secondary.push(
 
-				<div key={"footer-link-" + index }>
-					<Link href={ "/" + value.url } passHref>
-						<a className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</a>
-					</Link>
-				</div>
+		// 		<div key={"footer-link-" + index }>
+		// 			<Link href={ "/" + value.url } passHref>
+		// 				<div className="text-sm text-slate-500 dark:text-slate-300">{ value.name }</div>
+		// 			</Link>
+		// 		</div>
 
-			)
+		// 	)
 
-		})
+		// })
 		return (
 
 			<div className="flex flex-col items-center gap-2.5 px-5">
-				<div className="flex gap-2.5 flex-wrap justify-center">
+				{/* <div className="flex gap-2.5 flex-wrap justify-center">
 					{ links_primary }
 				</div>
 				<div className="flex gap-2.5 mt-2.5">
 					{ links_secondary }
-				</div>
+				</div> */}
 				<div className="mt-5">
 					<p className="text-xs text-slate-500 dark:text-slate-300">Mohit Tyagi</p>
 				</div>
