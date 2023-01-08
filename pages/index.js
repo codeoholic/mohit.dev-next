@@ -20,7 +20,11 @@ const Home = ( props ) => {
 				<div className="container mx-auto px-5 lg:px-0 lg:max-w-4xl">
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">About</h1>
-						<p className="text-zinc-800 text-lg dark:text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+						<p className="text-zinc-800 text-lg dark:text-white">Hey! Welcome to my website. This might sound like that it has been written in early 2000&apos;s but this is not the case. With time I am going to add text to the website and to start with I am showcasing my reading list for the year 2023. My idea of having a platform to keep things more permanent. A place where if needed to know about me, you can quickly judge the depth or shallowness of my ideas and notions.</p>
+					</div>
+					<div className="mt-5">
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">Thought on Social Media</h1>
+						<p className="text-zinc-800 text-lg dark:text-white">Social instruments over the internet were made to increase your social skills and not corner you in your own curated likes and dislikes. I will write more on this with time.</p>
 					</div>
 					<ReadingList />
 				</div>
