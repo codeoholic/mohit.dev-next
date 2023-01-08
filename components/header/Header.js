@@ -1,6 +1,6 @@
 import React from "react"
 import Link from "next/link"
-
+import Image from "next/image"
 const Header = ({ small }) => {
 
 	return(
@@ -10,9 +10,13 @@ const Header = ({ small }) => {
 				<Link href="/">
 					<div className="text-xl text-slate-900 dark:text-slate-50 font-bold">mohit.dev</div>
 				</Link>
-				<div className="h-8 w-6 relative">
+				<div className="h-6 w-6 relative">
 					<Link href="https://twitter.com/mohitdotdev" target="_blank">
-						<img src="https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/twitter.png" alt="twitter_icon"/>
+						<Image
+							src="https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/twitter.png"
+							alt="twitter_icon"
+							fill
+						/>
 					</Link>
 				</div>
 			</div>

@@ -20,7 +20,7 @@ const Home = ( props ) => {
 				<div className="container mx-auto px-5 lg:px-0 lg:max-w-4xl">
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">About</h1>
-						<p className="text-zinc-800 text-lg dark:text-white">Hey! Welcome to my website. This might sound like that it has been written in early 2000's but this is not the case. With time I am going to add text to the website and to start with I am showcasing my reading list for the year 2023. My idea of having a platform to keep things more permanent. A place where if needed to know about me, you can quickly judge the depth or shallowness of my ideas and notions.</p>
+						<p className="text-zinc-800 text-lg dark:text-white">Hey! Welcome to my website. This might sound like that it has been written in early 2000&apos;s but this is not the case. With time I am going to add text to the website and to start with I am showcasing my reading list for the year 2023. My idea of having a platform to keep things more permanent. A place where if needed to know about me, you can quickly judge the depth or shallowness of my ideas and notions.</p>
 					</div>
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">Thought on Social Media</h1>
