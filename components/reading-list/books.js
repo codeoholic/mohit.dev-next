@@ -14,6 +14,13 @@ export const BOOKS = [{
 
 },{
 
+    name: "Metamorphosis",
+    author: "Franz Kafka",
+    completion_percentage: 55,
+    progress: "w-[55%]"
+
+},{
+
     name: "Sapiens",
     author: "Yuval Noah Harari",
     completion_percentage: 0,
