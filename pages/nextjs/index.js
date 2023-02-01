@@ -38,7 +38,7 @@ const NextJSPage = () => {
                     </div>
                 </div>
 			</div>
-            <div className="container mx-auto py-5 px-5 md:px-0 mt-10">
+            <div className="container mx-auto py-5 px-5 md:px-0 mt-2.5 md:mt-10">
                 <div className="text-lg md:text-3xl text-zinc-700 font-semibold text-center">Why you should learn NextJS?</div>
                 <div className="text-sm md:text-xl text-zinc-600 mt-2.5 text-center">This is what Twitter has to say about the companies using NextJS.</div>
                 <div className="flex grid grid-col-1 md:grid-cols-3 gap-5 mt-10">
