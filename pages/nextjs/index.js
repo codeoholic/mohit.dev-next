@@ -5,8 +5,24 @@ import Footer from "../../components/footer"
 import Header from "../../components/header"
 import MetaTags from "../../components/meta-tags"
 
-const NextJSPage = () => {
+import { allPosts } from "contentlayer/generated"
 
+const NextJSPage = ({ posts }) => {
+
+    const PostCard = (post) => {
+
+        return (    
+            <div className="mb-5">
+                <div className="text-lg">
+                    <Link href={post.url}>
+                        <h3 className="text-lg font-semibold text-zinc-800 dark:text-zinc-300">{ post.title }</h3>
+                    </Link>
+                </div>
+                <div className="text-base text-zinc-800 dark:text-zinc-300 mt-1">{ post.description }</div>
+            </div>
+        )
+    
+    }
     return (
         <>
             <MetaTags
@@ -38,27 +54,50 @@ const NextJSPage = () => {
                     </div>
                 </div>
 			</div>
-            <div className="container mx-auto py-5 px-5 md:px-0 mt-2.5 md:mt-10">
-                <div className="text-lg md:text-3xl text-zinc-700 font-semibold text-center">Why you should learn NextJS?</div>
-                <div className="text-sm md:text-xl text-zinc-600 mt-2.5 text-center">This is what Twitter has to say about the companies using NextJS.</div>
-                <div className="flex grid grid-col-1 md:grid-cols-3 gap-5 mt-10">
-                    <div className="flex gap-2.5 flex-col">
-                        <blockquote className="twitter-tweet" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">wow. <a href="https://t.co/KTdaRyDizp">https://t.co/KTdaRyDizp</a> using <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a> <a href="https://t.co/mR3ns4Nvf2">pic.twitter.com/mR3ns4Nvf2</a></p>&mdash; Guillermo Rauch (@rauchg) <a href="https://twitter.com/rauchg/status/1594779272945627136?ref_src=twsrc%5Etfw">November 21, 2022</a></blockquote>
-                        <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Next.js in production, 2021 edition (non-exhaustive list) <a href="https://t.co/XUUzn4a2Su">https://t.co/XUUzn4a2Su</a> <a href="https://t.co/VoeHDcV8Yl">pic.twitter.com/VoeHDcV8Yl</a></p>&mdash; Guillermo Rauch (@rauchg) <a href="https://twitter.com/rauchg/status/1359237922076037122?ref_src=twsrc%5Etfw">February 9, 2021</a></blockquote> 
+            <div className="bg-slate-200 dark:bg-slate-800 py-5 px-5">
+                <div className="container mx-auto md:px-0 mt-2.5 md:mt-10">
+                    <div className="text-lg md:text-3xl text-zinc-800 dark:text-zinc-300 font-semibold text-center">Why you should learn NextJS?</div>
+                    <div className="text-sm md:text-xl text-zinc-800 dark:text-zinc-300 mt-2.5 text-center">This is what Twitter has to say about the companies using NextJS.</div>
+                    <div className="flex grid grid-col-1 md:grid-cols-3 gap-5 mt-10">
+                        <div className="flex gap-2.5 flex-col">
+                            <blockquote className="twitter-tweet" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">wow. <a href="https://t.co/KTdaRyDizp">https://t.co/KTdaRyDizp</a> using <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a> <a href="https://t.co/mR3ns4Nvf2">pic.twitter.com/mR3ns4Nvf2</a></p>&mdash; Guillermo Rauch (@rauchg) <a href="https://twitter.com/rauchg/status/1594779272945627136?ref_src=twsrc%5Etfw">November 21, 2022</a></blockquote>
+                            <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Next.js in production, 2021 edition (non-exhaustive list) <a href="https://t.co/XUUzn4a2Su">https://t.co/XUUzn4a2Su</a> <a href="https://t.co/VoeHDcV8Yl">pic.twitter.com/VoeHDcV8Yl</a></p>&mdash; Guillermo Rauch (@rauchg) <a href="https://twitter.com/rauchg/status/1359237922076037122?ref_src=twsrc%5Etfw">February 9, 2021</a></blockquote> 
+                        </div>
+                        <div className="flex gap-2.5 flex-col">
+                            <blockquote className="twitter-tweet" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">The Verge: new version built with <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a>, <a href="https://twitter.com/vercel?ref_src=twsrc%5Etfw">@vercel</a>, and <a href="https://twitter.com/tailwindcss?ref_src=twsrc%5Etfw">@tailwindcss</a> 🔥<a href="https://t.co/FgZVHIS8Fb">https://t.co/FgZVHIS8Fb</a> <a href="https://t.co/PGWnzfGiEO">pic.twitter.com/PGWnzfGiEO</a></p>&mdash; Lee Robinson (@leeerob) <a href="https://twitter.com/leeerob/status/1569717140768555008?ref_src=twsrc%5Etfw">September 13, 2022</a></blockquote>
+                            <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Steve Jobs Archive by Apple hosted at <a href="https://twitter.com/vercel?ref_src=twsrc%5Etfw">@vercel</a> and built with <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a><a href="https://t.co/jvH379YNnu">https://t.co/jvH379YNnu</a></p>&mdash; rauno (@raunofreiberg) <a href="https://twitter.com/raunofreiberg/status/1567831207391404032?ref_src=twsrc%5Etfw">September 8, 2022</a></blockquote>
+                        </div>
+                        <div className="flex gap-2.5 flex-col">
+                            <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">I&#39;m curating a list of the most beautiful <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a> sites of all time:<br/><br/>◆ <a href="https://t.co/zI9NZtatP8">https://t.co/zI9NZtatP8</a><br/>◆ <a href="https://t.co/lrcH8haDO7">https://t.co/lrcH8haDO7</a><br/>◆ <a href="https://t.co/fqmO18ap5v">https://t.co/fqmO18ap5v</a><br/>◆ <a href="https://t.co/sZ3VgwJ8AL">https://t.co/sZ3VgwJ8AL</a><br/>◆ <a href="https://t.co/BZoyYb5NOd">https://t.co/BZoyYb5NOd</a><br/><br/>Who else did I miss? 👀 <a href="https://t.co/up5x23x32M">pic.twitter.com/up5x23x32M</a></p>&mdash; Steven Tey (@steventey) <a href="https://twitter.com/steventey/status/1591134103210176512?ref_src=twsrc%5Etfw">November 11, 2022</a></blockquote>
+                            <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">This is probably one of the best SaaS landing pages I&#39;ve seen in a while 👇<br/><br/>✅ Impactful demo right in the hero<br/>✅ Clean *chefs kiss* dropdowns in the menu bar<br/>✅ Incredible demo video<br/><br/>All built with Next.js + Vercel 🤯<a href="https://t.co/m4C6rgXdoA">https://t.co/m4C6rgXdoA</a> <a href="https://t.co/VroV9H9pmT">pic.twitter.com/VroV9H9pmT</a></p>&mdash; Steven Tey (@steventey) <a href="https://twitter.com/steventey/status/1491443020117385219?ref_src=twsrc%5Etfw">February 9, 2022</a></blockquote>
+                        </div>
                     </div>
-                    <div className="flex gap-2.5 flex-col">
-                        <blockquote className="twitter-tweet" data-dnt="true" data-theme="light"><p lang="en" dir="ltr">The Verge: new version built with <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a>, <a href="https://twitter.com/vercel?ref_src=twsrc%5Etfw">@vercel</a>, and <a href="https://twitter.com/tailwindcss?ref_src=twsrc%5Etfw">@tailwindcss</a> 🔥<a href="https://t.co/FgZVHIS8Fb">https://t.co/FgZVHIS8Fb</a> <a href="https://t.co/PGWnzfGiEO">pic.twitter.com/PGWnzfGiEO</a></p>&mdash; Lee Robinson (@leeerob) <a href="https://twitter.com/leeerob/status/1569717140768555008?ref_src=twsrc%5Etfw">September 13, 2022</a></blockquote>
-                        <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">Steve Jobs Archive by Apple hosted at <a href="https://twitter.com/vercel?ref_src=twsrc%5Etfw">@vercel</a> and built with <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a><a href="https://t.co/jvH379YNnu">https://t.co/jvH379YNnu</a></p>&mdash; rauno (@raunofreiberg) <a href="https://twitter.com/raunofreiberg/status/1567831207391404032?ref_src=twsrc%5Etfw">September 8, 2022</a></blockquote>
+                </div>
+                <div className="container mx-auto md:px-0 mt-2.5 md:mt-10 bg-slate-200 dark:bg-slate-800">
+                    <div className="py-2.5">
+                        <h2 className="text-xl font-semibold text-zinc-800 dark:text-zinc-300">Top Articles</h2>
                     </div>
-                    <div className="flex gap-2.5 flex-col">
-                        <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">I&#39;m curating a list of the most beautiful <a href="https://twitter.com/nextjs?ref_src=twsrc%5Etfw">@nextjs</a> sites of all time:<br/><br/>◆ <a href="https://t.co/zI9NZtatP8">https://t.co/zI9NZtatP8</a><br/>◆ <a href="https://t.co/lrcH8haDO7">https://t.co/lrcH8haDO7</a><br/>◆ <a href="https://t.co/fqmO18ap5v">https://t.co/fqmO18ap5v</a><br/>◆ <a href="https://t.co/sZ3VgwJ8AL">https://t.co/sZ3VgwJ8AL</a><br/>◆ <a href="https://t.co/BZoyYb5NOd">https://t.co/BZoyYb5NOd</a><br/><br/>Who else did I miss? 👀 <a href="https://t.co/up5x23x32M">pic.twitter.com/up5x23x32M</a></p>&mdash; Steven Tey (@steventey) <a href="https://twitter.com/steventey/status/1591134103210176512?ref_src=twsrc%5Etfw">November 11, 2022</a></blockquote>
-                        <blockquote className="twitter-tweet" data-dnt="true"><p lang="en" dir="ltr">This is probably one of the best SaaS landing pages I&#39;ve seen in a while 👇<br/><br/>✅ Impactful demo right in the hero<br/>✅ Clean *chefs kiss* dropdowns in the menu bar<br/>✅ Incredible demo video<br/><br/>All built with Next.js + Vercel 🤯<a href="https://t.co/m4C6rgXdoA">https://t.co/m4C6rgXdoA</a> <a href="https://t.co/VroV9H9pmT">pic.twitter.com/VroV9H9pmT</a></p>&mdash; Steven Tey (@steventey) <a href="https://twitter.com/steventey/status/1491443020117385219?ref_src=twsrc%5Etfw">February 9, 2022</a></blockquote>
-                    </div>
+                    {
+                        
+                        posts.map((post, idx) => (
+                            
+                            <PostCard key={idx} {...post} />
+                        
+                        ))
+                    
+                    }
                 </div>
             </div>
             <Footer/>
         </>
     )
+
+}
+
+export async function getStaticProps() {
+  
+	const posts = allPosts
+  	return { props: { posts } }
 
 }
 

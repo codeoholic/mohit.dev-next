@@ -4,7 +4,7 @@ import Header from "../components/header"
 import MetaTags from "../components/meta-tags"
 import ReadingList from "../components/reading-list"
 
-const Home = ( props ) => {
+const Home = () => {
 
 	return (
 
@@ -18,21 +18,25 @@ const Home = ( props ) => {
 				<Header
 					small={ true }
 				/>
-				<div className="container mx-auto px-5 lg:px-0 lg:max-w-4xl">
+				<div className="container mx-auto px-5 lg:px-0 lg:max-w-4xl min-h-screen">
 					<div className="mt-5">
-						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">About</h1>
-						<p className="text-zinc-800 text-lg dark:text-white">Hey! Welcome to my website. This might sound like that it has been written in early 2000&apos;s but this is not the case. With time I am going to add text to the website and to start with I am showcasing my reading list for the year 2023. My idea of having a platform to keep things more permanent. A place where if needed to know about me, you can quickly judge the depth or shallowness of my ideas and notions.</p>
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">About</h1>
+						<p className="text-zinc-800 text-lg dark:text-zinc-300">Hey! Welcome to my website. This might sound like that it has been written in early 2000&apos;s but it is not. With time I am going to add text to the website and to start with I am showcasing my reading list for the year 2023. My idea of having a platform to keep things more permanent. A place where if needed to know about me, you can quickly judge the depth or shallowness of my ideas and notions.</p>
 					</div>
 					<div className="mt-5">
-						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">Thought on Social Media</h1>
-						<p className="text-zinc-800 text-lg dark:text-white">Social instruments over the internet were made to increase your social skills and not corner you in your own curated likes and dislikes. I will write more on this with time.</p>
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Thought on Social Media</h1>
+						<p className="text-zinc-800 text-lg dark:text-zinc-300">Social instruments over the internet were made to increase your social skills and not corner you in your own curated likes and dislikes. I will write more on this with time.</p>
 					</div>
 					<div className="mt-5">
-						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">Microsites</h1>
-						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-white">
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Goal</h1>
+						<p className="text-zinc-800 text-lg dark:text-zinc-300">My goal is to run an internet company with makes $1M every year per employee. It may sound audacious, but yes!</p>
+					</div>
+					<div className="mt-5">
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Microsites</h1>
+						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-zinc-300">
 							<li className="w-fit">
 								<Link href="/nextjs">
-									<div>NextJS</div>
+									<div className="underline">NextJS</div>
 								</Link>
 							</li>
 						</ol>

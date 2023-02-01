@@ -1,0 +1,73 @@
+{
+  "cacheItemsMap": {
+    "nextjs/another-article.md": {
+      "document": {
+        "title": "Another Article",
+        "date": "2023-01-01T18:30:00.000Z",
+        "body": {
+          "raw": "\n# What is NextJS?\nThis is about nextjs and I do not need to format it. Awesome!\n",
+          "html": "<h1>What is NextJS?</h1>\n<p>This is about nextjs and I do not need to format it. Awesome!</p>"
+        },
+        "_id": "nextjs/another-article.md",
+        "_raw": {
+          "sourceFilePath": "nextjs/another-article.md",
+          "sourceFileName": "another-article.md",
+          "sourceFileDir": "nextjs",
+          "contentType": "markdown",
+          "flattenedPath": "nextjs/another-article"
+        },
+        "type": "Post",
+        "url": "/posts/nextjs/another-article"
+      },
+      "documentHash": "1675249521161",
+      "hasWarnings": false,
+      "documentTypeName": "Post"
+    },
+    "nextjs/what-is-nextjs.md": {
+      "document": {
+        "title": "What is NextJS",
+        "date": "2023-01-01T18:30:00.000Z",
+        "body": {
+          "raw": "\n# What is NextJS?\nThis is about nextjs and I do not need to format it. Awesome!\n",
+          "html": "<h1>What is NextJS?</h1>\n<p>This is about nextjs and I do not need to format it. Awesome!</p>"
+        },
+        "_id": "nextjs/what-is-nextjs.md",
+        "_raw": {
+          "sourceFilePath": "nextjs/what-is-nextjs.md",
+          "sourceFileName": "what-is-nextjs.md",
+          "sourceFileDir": "nextjs",
+          "contentType": "markdown",
+          "flattenedPath": "nextjs/what-is-nextjs"
+        },
+        "type": "Post",
+        "url": "/posts/nextjs/what-is-nextjs"
+      },
+      "documentHash": "1675249432328",
+      "hasWarnings": false,
+      "documentTypeName": "Post"
+    },
+    "books/animal-farm.md": {
+      "document": {
+        "title": "Animal Farm",
+        "date": "2023-01-01T18:30:00.000Z",
+        "body": {
+          "raw": "\n# Animal Farm\nThis is about nextjs and I do not need to format it. Awesome!\n",
+          "html": "<h1>Animal Farm</h1>\n<p>This is about nextjs and I do not need to format it. Awesome!</p>"
+        },
+        "_id": "books/animal-farm.md",
+        "_raw": {
+          "sourceFilePath": "books/animal-farm.md",
+          "sourceFileName": "animal-farm.md",
+          "sourceFileDir": "books",
+          "contentType": "markdown",
+          "flattenedPath": "books/animal-farm"
+        },
+        "type": "Book",
+        "url": "/posts/books/animal-farm"
+      },
+      "documentHash": "1675249812845",
+      "hasWarnings": true,
+      "documentTypeName": "Book"
+    }
+  }
+}
