@@ -2,8 +2,8 @@ export const BOOKS = [{
 
     name: "Animal Farm",
     author: "George Orwell",
-    completion_percentage: 22,
-    progress: "w-[22%]"
+    completion_percentage: 40,
+    progress: "w-[40%]"
 
 },{
 
