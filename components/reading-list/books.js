@@ -2,8 +2,8 @@ export const BOOKS = [{
 
     name: "Animal Farm",
     author: "George Orwell",
-    completion_percentage: 22,
-    progress: "w-[22%]"
+    completion_percentage: 40,
+    progress: "w-[40%]"
 
 },{
 
@@ -39,5 +39,19 @@ export const BOOKS = [{
     author: "Yuval Noah Harari",
     completion_percentage: 0,
     progress: "w-[0%]"
+
+},{
+
+    name: "The Art of War",
+    author: "Sun Tzu",
+    completion_percentage: 25,
+    progress: "w-[25%]"
+
+},{
+
+    name: "The Minimalist Entrepreneur",
+    author: "Sahil Lavingia",
+    completion_percentage: 12,
+    progress: "w-[12%]"
 
 }]

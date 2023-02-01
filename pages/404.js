@@ -20,9 +20,7 @@ const FourZeroFour = () => {
                         <div className="text-6xl font-bold text-slate-900 dark:text-slate-50">404</div>
                         <div className="text-lg text-slate-700 mt-5 dark:text-slate-50">Seems like you are on a wrong page.</div>
                         <Link href="/" passHref>
-                            <a>
-                                <div className="text-lg text-slate-700 mt-5 underline dark:text-slate-50">Visit Home</div>
-                            </a>
+                            <div className="text-lg text-slate-700 mt-5 underline dark:text-slate-50">Visit Home</div>
                         </Link>
                     </div>
                 </div>

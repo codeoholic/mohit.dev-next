@@ -1,3 +1,4 @@
+import Link from "next/link"
 import Footer from "../components/footer"
 import Header from "../components/header"
 import MetaTags from "../components/meta-tags"
@@ -25,6 +26,16 @@ const Home = ( props ) => {
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">Thought on Social Media</h1>
 						<p className="text-zinc-800 text-lg dark:text-white">Social instruments over the internet were made to increase your social skills and not corner you in your own curated likes and dislikes. I will write more on this with time.</p>
+					</div>
+					<div className="mt-5">
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-white">Microsites</h1>
+						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-white">
+							<li className="w-fit">
+								<Link href="/nextjs">
+									<div>NextJS</div>
+								</Link>
+							</li>
+						</ol>
 					</div>
 					<ReadingList />
 				</div>
