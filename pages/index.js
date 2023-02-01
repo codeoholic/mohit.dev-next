@@ -29,7 +29,7 @@ const Home = () => {
 					</div>
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Goal</h1>
-						<p className="text-zinc-800 text-lg dark:text-zinc-300">My goal is to run an internet company with makes $1M every year per employee. It may sound audacious, but yes!</p>
+						<p className="text-zinc-800 text-lg dark:text-zinc-300">My goal is to run an internet company which makes $1M every year per employee. It may sound audacious, but yes!</p>
 					</div>
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Microsites</h1>
