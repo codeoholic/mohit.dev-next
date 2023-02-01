@@ -40,4 +40,18 @@ export const BOOKS = [{
     completion_percentage: 0,
     progress: "w-[0%]"
 
+},{
+
+    name: "The Art of War",
+    author: "Sun Tzu",
+    completion_percentage: 25,
+    progress: "w-[25%]"
+
+},{
+
+    name: "The Minimalist Entrepreneur",
+    author: "Sahil Lavingia",
+    completion_percentage: 12,
+    progress: "w-[12%]"
+
 }]
