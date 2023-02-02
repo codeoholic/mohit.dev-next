@@ -32,12 +32,14 @@ const Post = ( props ) => {
 				small={ true }
 			/>
 			<div className="container mx-auto px-5 lg:px-0 lg:max-w-4xl min-h-screen">
-                <Link href="/nextjs">
-                    <div className="flex items-center gap-2.5 mt-10">
-                        <ArrowLongLeftIcon className="w-8 h-8 text-zinc-800 dark:text-zinc-300"/>
-                        <div className="text-zinc-800 dark:text-zinc-300 text-sm">NextJS</div>
-                    </div>
-                </Link>
+                <div className="w-fit">
+                    <Link href="/nextjs">
+                        <div className="flex items-center gap-2.5 mt-10">
+                            <ArrowLongLeftIcon className="w-8 h-8 text-zinc-800 dark:text-zinc-300"/>
+                            <div className="text-zinc-800 dark:text-zinc-300 text-sm">NextJS</div>
+                        </div>
+                    </Link>
+                </div>
 				<h1 className="text-3xl mt-5 font-bold text-zinc-800 dark:text-zinc-300">{ page.title }</h1>
 				<div className="py-5">
                     <MDXContent components={ components }/>
