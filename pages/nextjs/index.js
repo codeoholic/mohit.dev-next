@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Script from "next/script"
+import Image from "next/image"
 
 import Footer from "../../components/footer"
 import Header from "../../components/header"
@@ -46,7 +47,12 @@ const NextJSPage = ({ posts }) => {
                         <Link href="https://twitter.com/mohitdotdev" passHref target="_blank">
                             <div className="rounded-full bg-white px-5 py-2.5 mt-5 flex gap-2.5 items-center shadow-md shadow-indigo-700 w-fit">
                                 <div className="h-4 w-4 relative">
-                                    <img src="/twitter.svg" alt="twitter_icon"/>
+                                    <Image
+                                        src="/twitter.svg"
+                                        alt="twitter_icon"
+                                        unoptimized
+                                        fill
+                                    />
                                 </div>
                                 <p className="text-xs md:text-sm text-zinc-800">Any questions? Ask me.</p>
                             </div>

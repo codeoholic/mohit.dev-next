@@ -32,13 +32,20 @@ const Home = () => {
 						<p className="text-zinc-800 text-lg dark:text-zinc-300">My goal is to run an internet company which makes $1M every year per employee. It may sound audacious, but yes!</p>
 					</div>
 					<div className="mt-5">
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Note to self</h1>
+						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-zinc-300">
+							<li className="">No more hobby projects: Every project has to be monetised.</li>
+						</ol>
+						<p className="text-zinc-800 text-lg dark:text-zinc-300"></p>
+					</div>
+					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Microsites</h1>
 						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-zinc-300">
-							<li className="w-fit">
-								<Link href="/nextjs">
-									<div className="underline">NextJS</div>
-								</Link>
-							</li>
+							<Link href="/nextjs">
+								<li className="w-fit">	
+									<p className="underline">NextJS</p>
+								</li>
+							</Link>
 						</ol>
 					</div>
 					<ReadingList />
