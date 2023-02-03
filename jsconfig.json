@@ -6,4 +6,4 @@
       }
     },
     "include": [ "**/*.js", ".contentlayer/generated"]
-  }
+}
