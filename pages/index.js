@@ -28,8 +28,12 @@ const Home = () => {
 						<p className="text-zinc-800 text-lg dark:text-zinc-300">Social instruments over the internet were made to increase your social skills and not corner you in your own curated likes and dislikes. I will write more on this with time.</p>
 					</div>
 					<div className="mt-5">
-						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Goal</h1>
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Professional Goal</h1>
 						<p className="text-zinc-800 text-lg dark:text-zinc-300">My goal is to run an internet company which makes $1M every year per employee. It may sound audacious, but yes!</p>
+					</div>
+					<div className="mt-5">
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Personal Goal</h1>
+						<p className="text-zinc-800 text-lg dark:text-zinc-300">Is to win every situation with fundamentals coming from the understanding of probability.</p>
 					</div>
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Note to self</h1>
