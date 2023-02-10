@@ -16,6 +16,7 @@ const Header = ({ small }) => {
 							src="/twitter.svg"
 							alt="twitter_icon"
 							fill
+							unoptimized
 						/>
 					</Link>
 				</div>
