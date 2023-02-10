@@ -40,7 +40,7 @@ const Home = () => {
 						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-zinc-300">
 							<li className="">No more hobby projects: Every project has to be monetised.</li>
 							<li className="">Become a creator on social platforms. Being a consumer should not be the default way.</li>
-							<li className="">Send out at least 7 tweets per day on Twitter and involve in conversations. Because consistency is far superior than human notion of having a connect.</li>
+							<li className="">Send out at least 7 tweets per day on Twitter and involve in conversations. Consistency is far superior than human notion of having a connect.</li>
 						</ol>
 						<p className="text-zinc-800 text-lg dark:text-zinc-300"></p>
 					</div>

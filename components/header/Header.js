@@ -13,7 +13,7 @@ const Header = ({ small }) => {
 				<div className="h-6 w-6 relative">
 					<Link href="https://twitter.com/mohitdotdev" target="_blank">
 						<Image
-							src="https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/twitter.png"
+							src="/twitter.svg"
 							alt="twitter_icon"
 							fill
 						/>
