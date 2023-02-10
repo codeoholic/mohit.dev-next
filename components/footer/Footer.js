@@ -30,8 +30,9 @@ const Footer = () => {
 						</Link>
 					</div>
 				</div>
-				<div className="mt-5">
-					<p className="text-xs text-slate-500 dark:text-slate-300">Mohit Tyagi</p>
+				<div className="mt-5 text-center">
+					<p className="text-sm text-slate-500 dark:text-slate-300">Mohit Tyagi</p>
+					<p className="text-xs text-slate-500 dark:text-slate-300">hey@mohit.dev</p>
 				</div>
 			</div>
 		</div>
