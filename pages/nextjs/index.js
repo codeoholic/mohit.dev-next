@@ -29,7 +29,7 @@ const NextJSPage = ({ posts }) => {
             <MetaTags
 				title="NextJS | mohit.dev"
 				description="some description."
-				image={ "https://mohit.sgp1.cdn.digitaloceanspaces.com/mohit.dev/assets/mohit.dev.webp" }
+				image={ "https://pub-f515f730e64d46a6930ee10906c5548d.r2.dev/mohit.dev.webp" }
 			/>
             <Script src="https://platform.twitter.com/widgets.js" strategy="lazyOnload" />
 			<div className="w-screen h-screen flex-col flex">
