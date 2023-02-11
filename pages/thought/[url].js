@@ -6,14 +6,17 @@ import Header from "../../components/header"
 
 import { allThoughts } from "contentlayer/generated"
 import { useMDXComponent } from 'next-contentlayer/hooks'
-import { Heading1, Heading2, Text } from "../../components/styling"
+import { Heading1, Heading2, Text, OrderedList, OrderedListItem, Anchor } from "../../components/styling"
 
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid'
 
 const components = {
 		
+    a: Anchor,
     h1: Heading1,
     h2: Heading2,
+    li: OrderedListItem,
+    ol: OrderedList,
     p: Text,
 
 }
