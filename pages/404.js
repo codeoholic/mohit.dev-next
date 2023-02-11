@@ -12,7 +12,7 @@ const FourZeroFour = () => {
                 <Header
                     small={ true }
                 />
-                <div className="container mx-auto px-5 max-w-5xl">
+                <div className="container mx-auto px-5 max-w-5xl h-screen">
                     <div className="flex flex-col justify-center items-center py-5">
                         <div className="h-64 w-64 relative mt-10 mb-10">
                             <iframe src="https://giphy.com/embed/Bp3dFfoqpCKFyXuSzP" width="100%" height="100%" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>

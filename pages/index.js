@@ -32,8 +32,18 @@ const Home = () => {
 						<p className="text-zinc-800 text-lg dark:text-zinc-300">My goal is to run an internet company which makes $1M every year per employee. It may sound audacious, but yes!</p>
 					</div>
 					<div className="mt-5">
-						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Personal Goal</h1>
-						<p className="text-zinc-800 text-lg dark:text-zinc-300">Is to win every situation with fundamentals coming from the understanding of probability.</p>
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Priority in life</h1>
+						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-zinc-300">
+							<li className="">Work</li>
+							<li className="">Workouts</li>
+							<li className="">Food</li>
+							<li className="">Books</li>
+							<li className="">People</li>
+							<li className="">Social</li>
+						</ol>
+						<Link href={ "/thought/priority-in-life" }>
+							<div className="text-base text-zinc-800 text-xl dark:text-zinc-300 underline">Link</div>
+						</Link>
 					</div>
 					<div className="mt-5">
 						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Note to self</h1>

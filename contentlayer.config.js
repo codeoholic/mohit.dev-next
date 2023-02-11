@@ -76,7 +76,48 @@ export const Book = defineDocumentType(() => ({
   },
 }))
 
+export const Thought = defineDocumentType(() => ({
+	
+	name: 'Thought',
+	filePathPattern: `thoughts/**/*.mdx`,
+	contentType: 'mdx',
+	fields: {
+	  title: {
+		type: 'string',
+		description: 'The title of the post',
+		required: true,
+	  },
+	  date: {
+		type: 'date',
+		description: 'The date of the post',
+		required: true,
+	  },
+	  description: {
+		type: 'string',
+		description: 'The desc of the post',
+		required: true,
+	  },
+	  url: {
+		type: 'string',
+		description: 'url of the post',
+		required: true,
+	  },
+	},
+	computedFields: {
+	  url: {
+		type: 'string',
+		resolve: (post) => `/thought/${post.url}`,
+	  },
+	  slugAsParams: {
+		type: "string",
+		resolve: (post) => `${post.url}`,
+	  },
+	},
+  }))
+
 export default makeSource({
-  contentDirPath: 'content',
-  documentTypes: [Post, Book],
+  
+	contentDirPath: 'content',
+  	documentTypes: [Post, Book, Thought],
+
 })
