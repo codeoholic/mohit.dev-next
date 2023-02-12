@@ -5,10 +5,10 @@ import Footer from "../../components/footer"
 import Header from "../../components/header"
 
 import { allThoughts } from "contentlayer/generated"
-import { useMDXComponent } from 'next-contentlayer/hooks'
 import { Heading1, Heading2, Text, OrderedList, OrderedListItem, Anchor } from "../../components/styling"
 
 import { ArrowLongLeftIcon } from '@heroicons/react/24/solid'
+import Post from "components/post"
 
 const components = {
 		
@@ -24,7 +24,6 @@ const components = {
 const Thoughts = ( props ) => {
 
     const page = allThoughts.find((page) => page.slugAsParams === props.url )
-    const MDXContent = useMDXComponent( page.body.code )
 	return (
 
     	<div className="bg-slate-200 dark:bg-slate-800 w-screen h-full">
@@ -43,10 +42,10 @@ const Thoughts = ( props ) => {
                         </div>
                     </Link>
                 </div>
-				<h1 className="text-3xl mt-5 font-bold text-zinc-800 dark:text-zinc-300">{ page.title }</h1>
-				<div className="py-5">
-                    <MDXContent components={ components }/>
-				</div>
+                <Post
+                    page={ page }
+                    components={ components }
+                />
 			</div>
             <Footer/>
     	</div>
