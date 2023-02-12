@@ -15,6 +15,11 @@ export const Post = defineDocumentType(() => ({
       description: 'The date of the post',
       required: true,
     },
+    updated_date: {
+      type: 'date',
+      description: 'The date of the post last update',
+      required: true,
+    },
     description: {
       type: 'string',
       description: 'The desc of the post',
@@ -51,6 +56,11 @@ export const Book = defineDocumentType(() => ({
     date: {
       type: 'date',
       description: 'The date of the post',
+      required: true,
+    },
+    updated_date: {
+      type: 'date',
+      description: 'The date of the post last update',
       required: true,
     },
     description: {
@@ -92,6 +102,11 @@ export const Thought = defineDocumentType(() => ({
 		description: 'The date of the post',
 		required: true,
 	  },
+    updated_date: {
+      type: 'date',
+      description: 'The date of the post last update',
+      required: true,
+    },
 	  description: {
 		type: 'string',
 		description: 'The desc of the post',
