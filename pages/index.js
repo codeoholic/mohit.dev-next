@@ -1,3 +1,4 @@
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/solid"
 import Link from "next/link"
 import Footer from "../components/footer"
 import Header from "../components/header"
@@ -62,6 +63,18 @@ const Home = () => {
 									<p className="underline">NextJS</p>
 								</li>
 							</Link>
+						</ol>
+					</div>
+					<div className="mt-5">
+						<h1 className="font-semibold text-zinc-800 text-xl dark:text-zinc-300">Projects</h1>
+						<ol className="list-decimal pl-5 mt-2.5 text-lg  dark:text-zinc-300">
+							<li className="w-fit">
+								<p className="">Nifty-50 : One day, I excited to track nifty 50 index and get an overall view of the stocks listed and built this. It is built on NextJS, Cloudflare workers and deployed on Cloudflare pages. Data is fetched from Yahoo Finance.</p>
+								<Link href="https://nifty50.mohit.dev/" target="_blank" className="flex items-center gap-2.5 w-fit">
+									<div className="underline">link</div>
+									<ArrowTopRightOnSquareIcon className="w-4 h-4 text-zinc-600"/>
+								</Link>
+							</li>
 						</ol>
 					</div>
 					<ReadingList />
